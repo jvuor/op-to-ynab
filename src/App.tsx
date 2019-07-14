@@ -1,9 +1,11 @@
 import React from 'react';
 import { FileSelector } from './components/FileSelector';
+import { FileParser } from './utils/FileParser';
+import { YNABTransaction } from './interfaces';
 import { FileOutput } from './components/FileOutput';
 
 interface AppState {
-  files: FileList | null;
+  YNABTransactions: YNABTransaction[] | null;
 }
 
 class App extends React.Component {
@@ -11,11 +13,16 @@ class App extends React.Component {
 
   constructor(props: any) {
     super(props);
-    this.state = { files: null }
+    this.state = { YNABTransactions: null };
   }
 
   public acceptFiles (files: FileList) {
-    this.setState({ files });
+    FileParser
+      .parse(files[0])
+      .then(YNABTransactions => {
+        console.log(YNABTransactions);
+        this.setState({ YNABTransactions })
+      });
   }
   
   render() {
@@ -24,7 +31,11 @@ class App extends React.Component {
         <h1>OP:n csv-tiedostot YNABiin</h1>
         <p>Anna tiedosto:</p>
         <FileSelector output={(files: FileList) => this.acceptFiles(files)} />
-        <FileOutput input={this.state.files || null} />
+        {
+          this.state.YNABTransactions
+          ? <FileOutput data={this.state.YNABTransactions} />
+          : null
+        }
       </div>
     );
   }
