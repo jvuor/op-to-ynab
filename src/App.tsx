@@ -1,8 +1,7 @@
 import React from 'react';
-import { FileSelector } from './components/FileSelector';
-import { FileParser } from './utils/FileParser';
 import { YNABTransaction } from './interfaces';
-import { FileOutput } from './components/FileOutput';
+import { FileSelector, FileOutput } from './components';
+import { FileParser } from './utils';
 
 interface AppState {
   YNABTransactions: YNABTransaction[] | null;
@@ -20,7 +19,6 @@ class App extends React.Component {
     FileParser
       .parse(files[0])
       .then(YNABTransactions => {
-        console.log(YNABTransactions);
         this.setState({ YNABTransactions })
       });
   }
