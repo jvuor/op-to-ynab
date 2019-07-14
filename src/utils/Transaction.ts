@@ -1,4 +1,4 @@
-import { OPTransaction, YNABTransaction, OPDate, YNABDate } from "../interfaces";
+import { OPDate, OPTransaction, YNABDate, YNABTransaction } from '../interfaces';
 
 const OPFieldOrder = [
   'recordDate',
@@ -11,7 +11,7 @@ const OPFieldOrder = [
   'reference',
   'message',
   'id',
-]
+];
 
 export class Transaction {
   private OPTransaction: OPTransaction;
@@ -25,12 +25,12 @@ export class Transaction {
     this.OPTransaction = OPTr as OPTransaction;
   }
 
-  public static convertDate(date: OPDate): YNABDate {
+  private static convertDate(date: OPDate): YNABDate {
     const [ day, month, year ] = date.split('.');
     return `${month}/${day}/${year}`;
   }
 
-  public static isAmountNegative(amount: string): boolean {
+  private static isAmountNegative(amount: string): boolean {
     return amount.startsWith('-');
   }
 
@@ -56,6 +56,6 @@ export class Transaction {
       memo,
       inflow,
       outflow,
-    }
+    };
   }
 }

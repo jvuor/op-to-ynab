@@ -1,4 +1,4 @@
-import { OPDate } from "./op.date";
+import { OPDate } from './op.date';
 
 export interface OPTransaction {
   recordDate: OPDate;

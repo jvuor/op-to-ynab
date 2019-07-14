@@ -1,4 +1,4 @@
-import { CSVHeader } from "../interfaces";
+import { CSVHeader } from '../interfaces';
 
 export const YNABHeader: CSVHeader = [
   { label: 'Date', key: 'date' },
@@ -7,4 +7,4 @@ export const YNABHeader: CSVHeader = [
   { label: 'Memo', key: 'memo' },
   { label: 'Outflow', key: 'outflow' },
   { label: 'Inflow', key: 'inflow' },
-]
+];

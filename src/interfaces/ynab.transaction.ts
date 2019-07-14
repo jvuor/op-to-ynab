@@ -1,4 +1,4 @@
-import { YNABDate } from "./ynab.date";
+import { YNABDate } from './ynab.date';
 
 export interface YNABTransaction {
   date: YNABDate;

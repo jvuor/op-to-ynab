@@ -1,6 +1,6 @@
 import React from 'react';
+import { FileOutput, FileSelector } from './components';
 import { YNABTransaction } from './interfaces';
-import { FileSelector, FileOutput } from './components';
 import { FileParser } from './utils';
 
 interface AppState {
@@ -15,15 +15,15 @@ class App extends React.Component {
     this.state = { YNABTransactions: null };
   }
 
-  public acceptFiles (files: FileList) {
+  public acceptFiles(files: FileList) {
     FileParser
       .parse(files[0])
-      .then(YNABTransactions => {
-        this.setState({ YNABTransactions })
+      .then((YNABTransactions) => {
+        this.setState({ YNABTransactions });
       });
   }
-  
-  render() {
+
+  public render() {
     return (
       <div>
         <h1>OP:n csv-tiedostot YNABiin</h1>
