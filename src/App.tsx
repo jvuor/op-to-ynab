@@ -26,14 +26,23 @@ class App extends React.Component {
   public render() {
     return (
       <div>
-        <h1>OP:n csv-tiedostot YNABiin</h1>
-        <p>Anna tiedosto:</p>
-        <FileSelector output={(files: FileList) => this.acceptFiles(files)} />
-        {
-          this.state.YNABTransactions
-          ? <FileOutput data={this.state.YNABTransactions} />
-          : null
-        }
+        <header>
+          <div className="headline">
+            Osuuspankin tilitapahtumien käsittelijä
+          </div>
+          <div className="subheader">
+            Muokkaa tapahtumat You Need A Budgettia varten
+          </div>
+        </header>
+        <div className="container">
+          <p>Anna tiedosto:</p>
+          <FileSelector output={(files: FileList) => this.acceptFiles(files)} />
+          {
+            this.state.YNABTransactions
+              ? <FileOutput data={this.state.YNABTransactions} />
+              : null
+          }
+        </div>
       </div>
     );
   }

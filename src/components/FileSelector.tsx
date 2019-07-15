@@ -22,6 +22,7 @@ export class FileSelector extends React.Component<FileSelectorProps> {
         <input
           type="file"
           accept=".csv"
+          className="file-input"
           onChange={(e) => this.handleChange(e.target.files)}
         />
       </div>
