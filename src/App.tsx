@@ -1,5 +1,6 @@
 import React from 'react';
 import { FileOutput, FileSelector } from './components';
+import { Container } from './components/Container';
 import { Header } from './components/Header';
 import { YNABTransaction } from './interfaces';
 import { FileParser } from './utils';
@@ -26,7 +27,7 @@ class App extends React.Component {
 
   public render() {
     return (
-      <div>
+      <React.Fragment>
         <Header>
           <Header.Title>
             Osuuspankin tilitapahtumien käsittelijä
@@ -35,7 +36,7 @@ class App extends React.Component {
             Muokkaa tapahtumat You Need A Budgettia varten
           </Header.Subtitle>
         </Header>
-        <div className="container">
+        <Container>
           <p>Anna tiedosto:</p>
           <FileSelector output={(files: FileList) => this.acceptFiles(files)} />
           {
@@ -43,8 +44,8 @@ class App extends React.Component {
               ? <FileOutput data={this.state.YNABTransactions} />
               : null
           }
-        </div>
-      </div>
+        </Container>
+      </React.Fragment>
     );
   }
 }
