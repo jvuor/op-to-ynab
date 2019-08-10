@@ -1,13 +1,13 @@
 import React from 'react';
 
 const title = (props: any) => (
-  <h2 className="text-white text-4xl">
+  <h2 className="text-white text-4xl m-2">
     {props.children}
   </h2>
 );
 
 const subtitle = (props: any) => (
-  <h4 className="text-gray-300 text-2xl">
+  <h4 className="text-gray-300 md:text-2xl m-2">
     {props.children}
   </h4>
 );
@@ -21,7 +21,7 @@ export class Header extends React.Component {
   public static Subtitle = subtitle;
 
   private headerStyle = {
-    backgroundImage: 'url("https://unsplash.it/2000/256")',
+    backgroundImage: 'url("https://unsplash.it/2000/256?image=538")',
   };
 
   private dimmerStyle = {
