@@ -1,5 +1,6 @@
 import React from 'react';
 import { FileOutput, FileSelector } from './components';
+import { Header } from './components/Header';
 import { YNABTransaction } from './interfaces';
 import { FileParser } from './utils';
 
@@ -26,14 +27,14 @@ class App extends React.Component {
   public render() {
     return (
       <div>
-        <header>
-          <div className="headline">
+        <Header>
+          <Header.Title>
             Osuuspankin tilitapahtumien käsittelijä
-          </div>
-          <div className="subheader">
+          </Header.Title>
+          <Header.Subtitle>
             Muokkaa tapahtumat You Need A Budgettia varten
-          </div>
-        </header>
+          </Header.Subtitle>
+        </Header>
         <div className="container">
           <p>Anna tiedosto:</p>
           <FileSelector output={(files: FileList) => this.acceptFiles(files)} />
