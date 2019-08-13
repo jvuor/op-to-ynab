@@ -2,6 +2,7 @@ import React from 'react';
 import { FileOutput, FileSelector } from './components';
 import { Container } from './components/Container';
 import { Header } from './components/Header';
+import { SideNav } from './components/SideNav';
 import { YNABTransaction } from './interfaces';
 import { FileParser } from './utils';
 
@@ -37,6 +38,7 @@ class App extends React.Component {
           </Header.Subtitle>
         </Header>
         <Container>
+          <SideNav />
           <p>Anna tiedosto:</p>
           <FileSelector output={(files: FileList) => this.acceptFiles(files)} />
           {
