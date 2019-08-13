@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const Container = (props: any) => (
-  <div className="max-w-4xl m-2 mx-auto">
+  <div className="max-w-4xl m-2 mx-auto relative">
     {props.children}
   </div>
 );
