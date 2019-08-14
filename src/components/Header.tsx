@@ -13,10 +13,6 @@ const subtitle = (props: any) => (
 );
 
 export class Header extends React.Component {
-  constructor(props: any) {
-    super(props);
-  }
-
   public static Title = title;
   public static Subtitle = subtitle;
 

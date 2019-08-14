@@ -4,8 +4,8 @@ import { SideNavContainer } from './SideNavContainer';
 
 export const SideNav = () => (
   <SideNavContainer>
-    <SideNavButton text="Ohjeet" />
-    <SideNavButton text="Tietoa" />
-    <SideNavButton text="github" />
+    <SideNavButton text="Muunnin" link="/" />
+    <SideNavButton text="Ohjeet" link="tutorial" />
+    <SideNavButton text="Tietoa" link="about" />
   </SideNavContainer>
 );
