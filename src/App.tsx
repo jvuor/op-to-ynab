@@ -1,13 +1,13 @@
 import React from 'react';
 import { Container } from './components/Container';
-import { Convert } from './components/Convert';
 import { Header } from './components/Header';
 import { SideNav } from './components/SideNav';
+import { Router, Routing } from './Routing';
 
 class App extends React.Component {
   public render() {
     return (
-      <React.Fragment>
+      <Router>
         <Header>
           <Header.Title>
             Osuuspankin tilitapahtumien käsittelijä
@@ -18,9 +18,9 @@ class App extends React.Component {
         </Header>
         <Container>
           <SideNav />
-          <Convert />
+          <Routing />
         </Container>
-      </React.Fragment>
+      </Router>
     );
   }
 }
