@@ -20,14 +20,14 @@ export class Transaction {
     const transactionFields = transactionRow.split(';');
     const OPTr: any = {};
     OPFieldOrder.forEach((field, i) => {
-      OPTr[field] = transactionFields[i];
+      OPTr[field] = transactionFields[i].replace(/\"/g, '');
     });
     this.OPTransaction = OPTr as OPTransaction;
   }
 
   private static convertDate(date: OPDate): YNABDate {
-    const [ day, month, year ] = date.split('.');
-    return `${month}/${day}/${year}`;
+    const [ year, month, day ] = date.split('-');
+    return `${day}/${month}/${year}`;
   }
 
   private static isAmountNegative(amount: string): boolean {

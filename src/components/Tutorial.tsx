@@ -7,15 +7,14 @@ export const Tutorial = () => (
     <div className="ml-8">
       <ol className="list-decimal">
         <li>Mene sivustolle <Anchor target="https://www.op.fi">www.op.fi</Anchor> työpöytäversioon.</li>
-        <li>Valitse Päivittäiset raha-asiat</li>
-        <li>Valitse Tapahtumavirta</li>
+        <li>Valitse yläpalkin Rahat-valikosta Tapahtumavirta</li>
         <li>Valitse ylhäältä tili jonka tapahtumat haluat siirtää.</li>
         <li>
           Tilivalintalistan oikealla puolella on nappula jossa on kolme pistettä.
-          Paina siitä ja valitse "Selaa tiliotteita".
+          Paina siitä ja valitse "Tulosta tiliotteita".
         </li>
-        <li>Valitse ajanjakso jolta haluat hakea tapahtumat ja paina sen valintanappia.</li>
-        <li>Avautuvasta Verkkotiliotteen katselu-ikkunasta valitse "Lataa pelkät tilitapahtumat tiedostona (csv)"</li>
+        <li>Valitse ajanjakso jolta haluat hakea tapahtumat ja paina "Hae".</li>
+        <li>Valitse "Lataa tilitapahtumat tiedostona (csv)"</li>
       </ol>
     </div>
   </div>
